@@ -1,8 +1,6 @@
 from math import sqrt
 from itertools import permutations
 
-radii = [3, 4, 7, 9.5, 12]
-
 def get_width(radii):
     width = radii[0]
 
@@ -17,7 +15,7 @@ def get_width(radii):
 
     return round(width, 2)
 
-def get_max_min(radii):
+def get_min_max(radii):
     min_width = [0, 0]
     max_width = [0, 0]
 
@@ -31,4 +29,30 @@ def get_max_min(radii):
         
     return min_width, max_width
 
-print(get_max_min(radii))
+radii = []
+
+while True:
+    radius = input("Enter radius: ").strip()
+
+    if radius:
+        try:
+            radius = float(radius)
+        except ValueError:
+            print("Input is not a valid number.")
+            continue
+
+        if radius > 0:
+            radii.append(radius)
+
+            if len(radii) >= 8:
+                break
+        else:
+            print("Radius must be postiive.")
+    else:
+        break
+
+if radii:
+    original_width = get_width(radii)
+    min_width, max_width = get_min_max(radii)
+    
+    print(f"{original_width:.2f}, {min_width[0]}, {min_width[1]}")
