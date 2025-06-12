@@ -55,4 +55,4 @@ if radii:
     original_width = get_width(radii)
     min_width, max_width = get_min_max(radii)
     
-    print(f"{original_width:.2f}, {min_width[0]}, {min_width[1]}")
+    print(f"{original_width:.2f}, {min_width[0]:.2f}, {min_width[1]}")
