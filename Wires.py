@@ -1,8 +1,4 @@
-data = """6
-5 9 9 12 3 6
-2 2 6 3 12 7
-10 11 1 1 11 10
-8 4 4 8 7 5""" #Input data goes here
+data = """""" #Input data goes here
 
 def parse_data(data):
     lines = data.strip().split("\n")
